@@ -7,12 +7,28 @@ def encryption(lang, stp, txt):
                     res += chr(((ord(c) + stp) - 1103) + 1071)
                 else:
                     res += chr(ord(c) + stp)
-        for c in txt:
             if c in RUS_UP:
                 if ord(c) + stp > 1071:
                     res += chr(((ord(c) + stp) - 1071) + 1039)
                 else:
                     res += chr(ord(c) + stp)
+            if c not in RUS_LOW and c not in RUS_UP:
+                res += c
+        return res
+    else:
+        for c in txt:
+            if c in ENG_LOW:
+                if ord(c) + stp > 122:
+                    res += chr(((ord(c) + stp) - 122) + 96)
+                else:
+                    res += chr(ord(c) + stp)
+            if c in ENG_UP:
+                if ord(c) + stp > 90:
+                    res += chr(((ord(c) + stp) - 90) + 64)
+                else:
+                    res += chr(ord(c) + stp)
+            if c not in ENG_LOW and c not in ENG_UP:
+                res += c
     return res
 
 
