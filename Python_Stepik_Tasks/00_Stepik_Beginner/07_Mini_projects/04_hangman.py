@@ -92,7 +92,7 @@ def play(word):
     guessed_letters = []  # список уже названных букв
     tries = 6  # количество попыток
 
-    print('Давайте играть в угадайку слов!')
+    print('Начинаем игру ВИСИЛИЦА!')
 
     while True:
         print(display_hangman(tries))
